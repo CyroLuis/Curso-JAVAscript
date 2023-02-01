@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nacionalidade</title>
+    <style>
+        body {
+            background-color: blue;
+            font: normal 20px Arial;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>qual paìs você é?:</h1>
+<strong>Digite seu pais:</strong><input type='text' name='txtpal' id="txtpal">
+<input type="button" value="Verificar" onclick="confirmar()">
+<div id="res"></div>
+<script>
+
+    var bu = document.getElementById('res')
+        bu.addEventListener('mouseover',entrar)
+        bu.addEventListener('mouseout', sair)
+        function entrar(){
+            bu.style.background= 'green'
+        }
+
+        function sair() {
+            bu.style.background= 'blue'
+        }
+
+    function confirmar(){
+        
+        var res = document.getElementById('res')
+        var txtp = document.getElementById('txtpal')
+        var pa = txtp.value;
+        
+        if(pa =='Brasil'|| pa=='brasil'){
+            res.innerHTML = `<p><strong> você é Brasileiro</strong></p>`;
+        }
+        
+         else { res.innerHTML = `<p>Você é um Estrangeiro do País
+             <strong>${pa}</strong></p>`;
+        }    
+    }
+</script>
+</body>
+</html>
